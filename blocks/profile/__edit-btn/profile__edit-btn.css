@@ -1,0 +1,12 @@
+.profile__edit-btn {
+  max-width: 24px;
+  grid-column: 2;
+  grid-row: 1;
+  cursor: pointer;
+  margin-bottom: 7px;
+  transition: opacity .5s ease;
+}
+
+.profile__edit-btn:hover {
+  opacity: .6;
+}
