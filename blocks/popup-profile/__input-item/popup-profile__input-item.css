@@ -1,0 +1,31 @@
+.popup-profile__input-item {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 27px;
+  border: none;
+  border-bottom: 1px solid #bcbcc4;
+  margin-bottom: 30px;
+}
+
+.popup-profile__input-item:last-of-type {
+  margin-bottom: 48px;
+}
+
+.popup-profile__input-item:focus {
+
+  outline: none;
+}
+
+.popup-profile__input-item::-webkit-input-placeholder,
+.popup-profile__input-item::-moz-placeholder,
+.popup-profile__input-item::-ms-input-placeholder,
+.popup-profile__input-item::placeholder {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  color: #000;
+  z-index: 2;
+}

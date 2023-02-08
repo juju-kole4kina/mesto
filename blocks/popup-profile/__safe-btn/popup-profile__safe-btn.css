@@ -1,0 +1,12 @@
+.popup-profile__safe-btn {
+  max-width: 358px;
+  height: 50px;
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+  transition: opacity .5s ease;
+}
+
+.popup-profile__safe-btn:hover {
+  opacity: .8;
+}

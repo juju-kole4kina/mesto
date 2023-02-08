@@ -74,14 +74,19 @@
     <section class="popup-profile">
       <form action="#" class="popup-profile__form">
         <button class="popup-profile__exit-btn">+</button>
-        <fieldset class="popup-profile__input-container">
-          <label for="" class="popup-profile__label" for="user-name"></label>
-          <input type="text" class="popup-profile__input-user-name" placeholder="Жак-Ив Кусто" id="user-name">
-          <label for="" class="popup-profile__label" for="user-discription"></label>
-          <input type="text" class="popup-profile__input-user-discription" placeholder="Исследователь океана"
-            id="user-discription">
-          <button class="popup-profile__safe-btn">Сохранить</button>
-        </fieldset>
+        <div class="popup-profile__main-container">
+          <h2 class="popup-profile__heading">Редактировать профиль</h2>
+          <fieldset class="popup-profile__input-container">
+            <label for="" class="popup-profile__label" for="user-name"></label>
+            <input type="text" class="popup-profile__input-item" name="user-name" placeholder="Жак-Ив Кусто"
+              id="user-name">
+            <label for="" class="popup-profile__label" for="user-discription"></label>
+            <input type="text" class="popup-profile__input-item" name="user-decription"
+              placeholder="Исследователь океана" id="user-discription">
+            <button class="popup-profile__safe-btn">Сохранить</button>
+          </fieldset>
+        </div>
+
       </form>
     </section>
   </main>

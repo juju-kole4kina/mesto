@@ -1,0 +1,18 @@
+.popup-profile__exit-btn {
+  background: transparent;
+  cursor: pointer;
+  border: none;
+  color: #fff;
+  font-size: 70px;
+  line-height: 0;
+  font-weight: 400;
+  transform: rotate(45deg);
+  position: absolute;
+  top: -20px;
+  right: -50px;
+  transition: opacity .5s ease;
+}
+
+.popup-profile__exit-btn:hover {
+  opacity: .6;
+}
