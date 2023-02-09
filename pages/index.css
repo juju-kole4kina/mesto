@@ -33,3 +33,6 @@
 @import url('../blocks/popup-profile/__label/popup-profile__label.css');
 @import url('../blocks/popup-profile/__input-item/popup-profile__input-item.css');
 @import url('../blocks/popup-profile/__safe-btn/popup-profile__safe-btn.css');
+/* Footer */
+@import url('../blocks/footer/footer.css');
+@import url('../blocks/footer/__copyright/footer__copyright.css');
