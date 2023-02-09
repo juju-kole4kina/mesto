@@ -7,3 +7,10 @@
   row-gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
 }
+
+@media (max-width: 959px) {
+  .gallery__list {
+    column-gap: 19px;
+    row-gap: 22px;
+  }
+}
