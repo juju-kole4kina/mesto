@@ -5,3 +5,24 @@
   font-weight: 500;
   line-height: 48px;
 }
+
+@media (max-width: 750px) {
+  .profile__user-name {
+    font-size: 37px;
+    line-height: 43px;
+  }
+}
+
+@media (max-width: 600px) {
+  .profile__user-name {
+    font-size: 30px;
+    line-height: 36px;
+  }
+}
+
+@media (max-width: 447px) {
+  .profile__user-name {
+    font-size: 27px;
+    line-height: 33px;
+  }
+}
