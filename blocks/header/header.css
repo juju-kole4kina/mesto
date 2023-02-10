@@ -1,7 +1,28 @@
 .header {
+  box-sizing: border-box;
 max-width: 880px;
 margin: 0 auto;
 padding-top: 45px;
 min-height: 74px;
 border-bottom: 1px solid #545454;
+}
+
+@media (max-width: 885px){
+  .header {
+    padding-left: 27px;
+  }
+}
+
+@media (max-width: 680px){
+  .header {
+    padding-top: 35px;
+  }
+}
+
+@media (max-width: 320px) {
+  .header{
+    padding-top: 28px;
+    min-height: 84px;
+  }
+
 }
