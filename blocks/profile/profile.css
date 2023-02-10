@@ -4,5 +4,20 @@
   padding: 40px 0 50px 0;
   color: #fff;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
+}
+
+@media (max-width: 900px) {
+  .profile {
+    max-width: calc(100% - 40px);
+
+  }
+}
+
+@media (max-width: 447px) {
+  .profile {
+    flex-direction: column;
+
+  }
 }

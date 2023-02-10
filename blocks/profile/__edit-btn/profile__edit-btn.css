@@ -1,5 +1,9 @@
 .profile__edit-btn {
-  max-width: 24px;
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  border: none;
+  background: center / cover no-repeat url('../../../images/icons/Edit-button.svg');
   grid-column: 2;
   grid-row: 1;
   cursor: pointer;
@@ -9,4 +13,20 @@
 
 .profile__edit-btn:hover {
   opacity: .6;
+}
+
+@media (max-width: 740px) {
+  .profile__edit-btn {
+    margin: 0;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 320px) {
+  .profile__edit-btn {
+    margin: 0;
+    width: 18px;
+    height: 18px;
+  }
 }
