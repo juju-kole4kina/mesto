@@ -10,3 +10,13 @@
 .popup-profile__safe-btn:hover {
   opacity: .8;
 }
+
+@media (max-width: 320px) {
+  .popup-profile__safe-btn {
+    height: 46px;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 400;
+  }
+
+}
