@@ -1,29 +1,22 @@
-.popup-profile__exit-btn {
+.popup__exit-btn {
   background: transparent;
   cursor: pointer;
   border: none;
   width: 32px;
   height: 32px;
-  /* color: #fff;
-  font-size: 70px;
-  line-height: 0;
-  font-weight: 400;
-  transform: rotate(45deg); */
   background: center / cover url('../../../images/icons/Close-Icon.svg');
   position: absolute;
-  top: -40px;
-  right: -40px;
+  top: -75px;
+  right: -75px;
   transition: opacity .5s ease;
 }
 
-.popup-profile__exit-btn:hover {
+.popup__exit-btn:hover {
   opacity: .6;
 }
 
-
-
 @media (max-width: 720px) {
-  .popup-profile__exit-btn {
+  .popup__exit-btn {
     width: 25px;
     height: 25px;
     right: 0;

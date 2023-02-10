@@ -1,4 +1,4 @@
-.popup-profile__input-item {
+.popup__input-item {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -9,19 +9,19 @@
   margin-bottom: 30px;
 }
 
-.popup-profile__input-item:last-of-type {
+.popup__input-item:last-of-type {
   margin-bottom: 48px;
 }
 
-.popup-profile__input-item:focus {
+.popup__input-item:focus {
 
   outline: none;
 }
 
-.popup-profile__input-item::-webkit-input-placeholder,
-.popup-profile__input-item::-moz-placeholder,
-.popup-profile__input-item::-ms-input-placeholder,
-.popup-profile__input-item::placeholder {
+.popup__input-item::-webkit-input-placeholder,
+.popup__input-item::-moz-placeholder,
+.popup__input-item::-ms-input-placeholder,
+.popup__input-item::placeholder {
   font-family: 'Inter', sans-serif;
   font-size: 14px;
   font-weight: 400;
