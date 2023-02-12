@@ -1,11 +1,12 @@
 .gallery__item-title {
   margin: 0;
   padding: 0;
-  max-width: 175px;
+  max-width: 190px;
   font-size: 24px;
   font-weight: 900;
   line-height: 29px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  color: #000;
 }

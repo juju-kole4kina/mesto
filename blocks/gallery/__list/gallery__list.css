@@ -14,3 +14,12 @@
     row-gap: 22px;
   }
 }
+
+@media (max-width: 320px) {
+  .gallery__list {
+    /* grid-template-columns: 1fr; */
+    column-gap: 0;
+    margin: 0 auto;
+    row-gap: 20px;
+  }
+}

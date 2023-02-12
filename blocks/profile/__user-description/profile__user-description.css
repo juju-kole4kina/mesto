@@ -6,6 +6,9 @@
   line-height: 22px;
   grid-column: 1;
   align-self: start;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 @media (max-width: 740px) {

@@ -3,7 +3,11 @@
   padding: 0;
   font-size: 42px;
   font-weight: 500;
-  line-height: 48px;
+  line-height: 47px;
+  align-self: end;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 @media (max-width: 750px) {
@@ -22,6 +26,7 @@
 
 @media (max-width: 447px) {
   .profile__user-name {
+    padding-left: 25px;
     font-size: 27px;
     line-height: 33px;
   }
