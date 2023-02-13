@@ -1,26 +1,17 @@
 .popup {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
   display: none;
-  padding-top: 195px;
   justify-content: center;
-}
-
-.popup::after {
-  content: '';
-  background-color: #000;
-  opacity: .5;
-  position: absolute;
+  padding-top: 195px;
+  position: fixed;
   top: 0;
   left: 0;
-  bottom: 0;
   right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+
 }
 
-@media (max-width: 320px) {
+@media (max-width: 386px) {
   .popup {
     padding-top: 123px;
   }

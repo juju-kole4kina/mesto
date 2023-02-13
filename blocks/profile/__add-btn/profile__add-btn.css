@@ -18,17 +18,16 @@
 opacity: .6;
 }
 
-@media (max-width: 680px) {
+@media (max-width: 685px) {
   .profile__add-btn {
     width: 100px;
-
+    margin-top: 10px;
   }
 }
 
 @media (max-width: 547px) {
   .profile__add-btn {
     width: 100%;
-    /* margin-top: 30px; */
   }
 }
 
