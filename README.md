@@ -32,4 +32,4 @@
 
 ---
 
-- [Ссылка на проект](https://juju-kole4kina.github.io/mesto/index.html)
+- [Ссылка на проект](https://juju-kole4kina.github.io/mesto/)
