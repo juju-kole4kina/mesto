@@ -20,9 +20,9 @@
       <div class="profile__info">
         <h1 class="profile__user-name">Жак-Ив Кусто</h1>
         <p class="profile__user-description">Исследователь океана</p>
-        <button type="button" class="profile__edit-btn"></button>
+        <button type="button" class="profile__edit-btn" aria-label="Редактировать профиль"></button>
       </div>
-      <button type="button" class="profile__add-btn"><img src="./images/icons/add-btn.png" alt="Добавить"></button>
+      <button type="button" class="profile__add-btn" aria-label="Добавить фото"></button>
     </section>
     <section class="gallery" aria-label="Галерея">
       <ul class="gallery__list">
@@ -30,42 +30,42 @@
           <img src="./images/content-images/karchaevo.jpg" alt="Карачаевск" class="gallery__image">
           <div class="gallery__description">
             <h2 class="gallery__item-title">Карачаевск</h2>
-            <button class="gallery__like-btn"></button>
+            <button type="button" class="gallery__like-btn" aria-label="Мне нравится"></button>
           </div>
         </li>
         <li class="gallery__item">
           <img src="./images/content-images/elbrus.jpg" alt="Гора Эльбрус" class="gallery__image">
           <div class="gallery__description">
             <h2 class="gallery__item-title">Гора Эльбрус</h2>
-            <button class="gallery__like-btn"></button>
+            <button type="button" class="gallery__like-btn" aria-label="Мне нравится"></button>
           </div>
         </li>
         <li class="gallery__item">
           <img src="./images/content-images/dombai.jpg" alt="Домбай" class="gallery__image">
           <div class="gallery__description">
             <h2 class="gallery__item-title">Домбай</h2>
-            <button class="gallery__like-btn"></button>
+            <button type="button" class="gallery__like-btn" aria-label="Мне нравится"></button>
           </div>
         </li>
         <li class="gallery__item">
           <img src="./images/content-images/elbrus.jpg" alt="Гора Эльбрус" class="gallery__image">
           <div class="gallery__description">
             <h2 class="gallery__item-title">Гора Эльбрус</h2>
-            <button class="gallery__like-btn"></button>
+            <button type="button" class="gallery__like-btn" aria-label="Мне нравится"></button>
           </div>
         </li>
         <li class="gallery__item">
           <img src="./images/content-images/dombai.jpg" alt="Домбай" class="gallery__image">
           <div class="gallery__description">
             <h2 class="gallery__item-title">Домбай</h2>
-            <button class="gallery__like-btn"></button>
+            <button type="button" class="gallery__like-btn" aria-label="Мне нравится"></button>
           </div>
         </li>
         <li class="gallery__item">
           <img src="./images/content-images/karchaevo.jpg" alt="Карачаевск" class="gallery__image">
           <div class="gallery__description">
             <h2 class="gallery__item-title">Карачаево-Черкесская республика</h2>
-            <button class="gallery__like-btn"></button>
+            <button type="button" class="gallery__like-btn" aria-label="Мне нравится"></button>
           </div>
         </li>
       </ul>
@@ -77,17 +77,13 @@
   </footer>
   <section class="popup" aria-label="Редактировать профиль">
     <div class="popup__container">
-      <button class="popup__exit-btn"></button>
-      <form action="post" class="popup__form">
-        <fieldset class="popup__input-container">
-          <legend class="popup__heading" title="Редактировать профиль">Редактировать профиль</legend>
-          <label class="popup__label" for="user-name"></label>
-          <input type="text" class="popup__input-item" name="user-name" id="user-name" placeholder="Ваше имя">
-          <label class="popup__label" for="user-description"></label>
-          <input type="text" class="popup__input-item" name="user-decription" id="user-description"
-            placeholder="Ваш род деятельности">
-          <button type="submit" class="popup__safe-btn">Сохранить</button>
-        </fieldset>
+      <button type="button" class="popup__exit-btn" aria-label="Закрыть окно редактирования"></button>
+      <form action="post" class="popup__form" name="Редактировать профиль">
+        <h2 class="popup__heading" title="Редактировать профиль">Редактировать профиль</h2>
+        <input type="text" class="popup__input-item" name="имя пользователя" id="user-name" placeholder="Ваше имя">
+        <input type="text" class="popup__input-item" name="деятельность пользователя" id="user-description"
+          placeholder="Ваш род деятельности">
+        <button type="submit" class="popup__safe-btn">Сохранить</button>
       </form>
     </div>
   </section>

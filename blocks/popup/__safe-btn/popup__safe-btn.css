@@ -1,16 +1,19 @@
 .popup__safe-btn {
-  border: 1px solid transparent;
+  box-sizing: border-box;
   border-radius: 2px;
   width: 100%;
   height: 50px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
   background-color: #000;
   color: #fff;
   cursor: pointer;
-  transition: opacity .5s ease;
+  transition: background-color .5s ease;
 }
 
 .popup__safe-btn:hover {
-  opacity: .8;
+  background-color: rgba(0, 0, 0, .8);
 }
 
 @media (max-width: 386px) {
@@ -18,6 +21,6 @@
     height: 46px;
     font-size: 14px;
     line-height: 17px;
-    font-weight: 400;
+
   }
 }

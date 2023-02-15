@@ -2,13 +2,14 @@
   width: 24px;
   height: 24px;
   background-color: transparent;
-  border: none;
-  background: center / cover no-repeat url('../../../images/icons/Edit-button.svg');
+  border: 1px solid #fff;
+  background: center / auto no-repeat url('../../../images/icons/edit-button.svg');
   grid-column: 2;
   grid-row: 1;
   cursor: pointer;
   margin-bottom: 7px;
   transition: opacity .5s ease;
+  box-sizing: border-box;
 }
 
 .profile__edit-btn:hover {
@@ -25,6 +26,7 @@
 
 @media (max-width: 320px) {
   .profile__edit-btn {
+    background-size: 7.5px;
     margin: 0;
     width: 18px;
     height: 18px;
