@@ -24,8 +24,5 @@
   .profile__user-description {
     font-size: 14px;
     line-height: 17px;
-    grid-column: 1/3;
-    align-self: center;
-    text-align: center;
   }
 }
