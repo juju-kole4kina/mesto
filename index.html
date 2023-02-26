@@ -28,6 +28,7 @@
       <ul class="gallery__list">
         <li class="gallery__item">
           <img src="./images/content-images/karchaevo.jpg" alt="Карачаевск" class="gallery__image">
+          <button type="button" class="gallery__delete-btn" aria-label="Удалить"></button>
           <div class="gallery__description">
             <h2 class="gallery__item-title">Карачаевск</h2>
             <button type="button" class="gallery__like-btn" aria-label="Мне нравится"></button>
@@ -35,6 +36,7 @@
         </li>
         <li class="gallery__item">
           <img src="./images/content-images/elbrus.jpg" alt="Гора Эльбрус" class="gallery__image">
+          <button type="button" class="gallery__delete-btn" aria-label="Удалить"></button>
           <div class="gallery__description">
             <h2 class="gallery__item-title">Гора Эльбрус</h2>
             <button type="button" class="gallery__like-btn" aria-label="Мне нравится"></button>
@@ -42,6 +44,7 @@
         </li>
         <li class="gallery__item">
           <img src="./images/content-images/dombai.jpg" alt="Домбай" class="gallery__image">
+          <button type="button" class="gallery__delete-btn" aria-label="Удалить"></button>
           <div class="gallery__description">
             <h2 class="gallery__item-title">Домбай</h2>
             <button type="button" class="gallery__like-btn" aria-label="Мне нравится"></button>
@@ -49,6 +52,7 @@
         </li>
         <li class="gallery__item">
           <img src="./images/content-images/elbrus.jpg" alt="Гора Эльбрус" class="gallery__image">
+          <button type="button" class="gallery__delete-btn" aria-label="Удалить"></button>
           <div class="gallery__description">
             <h2 class="gallery__item-title">Гора Эльбрус</h2>
             <button type="button" class="gallery__like-btn" aria-label="Мне нравится"></button>
@@ -56,6 +60,7 @@
         </li>
         <li class="gallery__item">
           <img src="./images/content-images/dombai.jpg" alt="Домбай" class="gallery__image">
+          <button type="button" class="gallery__delete-btn" aria-label="Удалить"></button>
           <div class="gallery__description">
             <h2 class="gallery__item-title">Домбай</h2>
             <button type="button" class="gallery__like-btn" aria-label="Мне нравится"></button>
@@ -63,6 +68,7 @@
         </li>
         <li class="gallery__item">
           <img src="./images/content-images/karchaevo.jpg" alt="Карачаевск" class="gallery__image">
+          <button type="button" class="gallery__delete-btn" aria-label="Удалить"></button>
           <div class="gallery__description">
             <h2 class="gallery__item-title">Карачаево-Черкесская республика</h2>
             <button type="button" class="gallery__like-btn" aria-label="Мне нравится"></button>
@@ -75,7 +81,7 @@
   <footer class="footer">
     <p class="footer__copyright">© 2023 Mesto Russia</p>
   </footer>
-  <section class="popup" aria-label="Редактировать профиль">
+  <section class="popup popup_type_edit-profile" aria-label="Редактировать профиль">
     <div class="popup__container">
       <button type="button" class="popup__exit-btn" aria-label="Закрыть окно редактирования"></button>
       <form action="post" class="popup__form" name="edit-profile">
@@ -87,6 +93,37 @@
       </form>
     </div>
   </section>
+  <section class="popup popup_type_add-card" aria-label="Редактировать профиль">
+    <div class="popup__container">
+      <button type="button" class="popup__exit-btn" aria-label="Закрыть окно редактирования"></button>
+      <form action="post" class="popup__form" name="add-card">
+        <h2 class="popup__heading">Новое место</h2>
+        <input type="text" class="popup__input-item" name="title-card" id="title-card" placeholder="Название">
+        <input type="text" class="popup__input-item" name="card-image" id="card-image" placeholder="Ссылка на картинку">
+        <button type="submit" class="popup__safe-btn">Сохранить</button>
+      </form>
+    </div>
+  </section>
+  <section class="popup popup_type_opened-card" aria-label="Редактировать профиль">
+    <div class="popup__container">
+      <button type="button" class="popup__exit-btn" aria-label="Закрыть окно редактирования"></button>
+      <figure class="popup__figure">
+        <img src="#" alt="#" class="popup__img-card">
+        <figcaption class="popup__descritption-card"></figcaption>
+      </figure>
+
+    </div>
+  </section>
+  <template class="template-card">
+    <li class="gallery__item">
+      <img src="#" alt="Описание" class="gallery__image">
+      <button type="button" class="gallery__delete-btn" aria-label="Удалить"></button>
+      <div class="gallery__description">
+        <h2 class="gallery__item-title"></h2>
+        <button type="button" class="gallery__like-btn" aria-label="Мне нравится"></button>
+      </div>
+    </li>
+  </template>
   <script src="./scripts/index.js"></script>
 </body>
 
