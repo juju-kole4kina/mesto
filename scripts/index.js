@@ -124,5 +124,3 @@ addCardBtn.addEventListener('click', () => popupOpen(addCardPopup));
 
 editProfilePopup.addEventListener('submit', editProfile);
 addCardPopup.addEventListener('submit', addData);
-
-console.log(initialCards);
