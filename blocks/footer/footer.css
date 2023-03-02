@@ -1,7 +1,9 @@
 .footer {
   max-width: 880px;
+  width: 100%;
   margin: 0 auto;
   padding: 66px 0 60px 0;
+  flex-shrink: 0;
 }
 
 @media (max-width: 956px) {
