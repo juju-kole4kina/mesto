@@ -3,7 +3,7 @@
   height: 24px;
   background-color: transparent;
   border: 1px solid #fff;
-  background: center / auto no-repeat url('../../../images/icons/edit-button.svg');
+  background: center / auto no-repeat url('../../../images/icons/edit-btn.svg');
   grid-column: 2;
   grid-row: 1;
   cursor: pointer;

@@ -105,10 +105,9 @@ const editOpen = () => {
   userNameInput.value = userName.textContent;
   userJobInput.value = userJob.textContent;
 };
-
+editOpen();
 const editProfile = (evt) => {
   evt.preventDefault();
-
   userName.textContent = userNameInput.value;
   userJob.textContent = userJobInput.value;
 
