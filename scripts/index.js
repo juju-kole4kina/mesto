@@ -40,7 +40,7 @@ const openPopup = (popup) => {
   popup.classList.add('popup_opened');
 }
 
-const popupClose = (popup) => {
+const closePopup = (popup) => {
   popup.classList.remove('popup_opened');
 };
 
@@ -48,7 +48,7 @@ buttonClosePopup.forEach(exitBtn => {
   exitBtn.addEventListener('click', (evt) => {
     const parentSection = evt.target.closest('section.popup');
 
-    popupClose(parentSection);
+    closePopup(parentSection);
   });
 });
 
@@ -105,7 +105,7 @@ const editProfile = (evt) => {
   userName.textContent = userNameInput.value;
   userJob.textContent = userJobInput.value;
 
-  popupClose(editProfilePopup);
+  closePopup(editProfilePopup);
 };
 
 const submitAddCardForm = (evt) => {
@@ -114,7 +114,7 @@ const submitAddCardForm = (evt) => {
   addCard({name: cardNameInput.value, link: cardImgInput.value});
 
   evt.target.reset();
-  popupClose(addCardPopup);
+  closePopup(addCardPopup);
 }
 
 const addCard = (card) => {
@@ -126,3 +126,6 @@ buttonOpenAddCardPopup.addEventListener('click', () => openPopup(addCardPopup));
 
 editProfilePopup.addEventListener('submit', editProfile);
 addCardPopup.addEventListener('submit', submitAddCardForm);
+
+
+
