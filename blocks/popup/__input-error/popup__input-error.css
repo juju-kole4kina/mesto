@@ -7,3 +7,10 @@
   line-height: 15px;
   min-height: 30px;
 }
+
+@media (max-width: 406px) {
+  .popup__input-error {
+    min-height: 15px;
+    margin-bottom: 5px;
+  }
+}
