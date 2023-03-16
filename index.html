@@ -37,12 +37,14 @@
   <section class="popup popup_type_edit-profile" aria-label="Редактировать профиль">
     <div class="popup__container">
       <button type="button" class="popup__exit-btn" aria-label="Закрыть окно редактирования"></button>
-      <form action="post" class="popup__form popup__form_type_edit-profile" name="edit-profile">
+      <form action="post" class="popup__form popup__form_type_edit-profile" name="edit-profile" novalidate>
         <h2 class="popup__heading">Редактировать профиль</h2>
         <input type="text" class="popup__input-item" minlength="2" maxlength="40" name="user-name" id="user-name"
           placeholder="Ваше имя" required>
+        <span class="popup__input-error user-name-error"></span>
         <input type="text" class="popup__input-item" minlength="2" maxlength="200" name="user-description"
           id="user-description" placeholder="Ваш род деятельности" required>
+        <span class="popup__input-error user-description-error"></span>
         <button type="submit" class="popup__safe-btn">Сохранить</button>
       </form>
     </div>
@@ -50,12 +52,14 @@
   <section class="popup popup_type_add-card" aria-label="Добавить карточку">
     <div class="popup__container">
       <button type="button" class="popup__exit-btn" aria-label="Закрыть окно редактирования"></button>
-      <form action="post" class="popup__form popup__form_type_add-card" name="add-card">
+      <form action="post" class="popup__form popup__form_type_add-card" name="add-card" novalidate>
         <h2 class="popup__heading">Новое место</h2>
         <input type="text" class="popup__input-item" minlength="2" maxlength="30" name="title-card" id="title-card"
           placeholder="Название" required>
+        <span class="popup__input-error title-card-error"></span>
         <input type="url" class="popup__input-item" name="card-image" id="card-image" placeholder="Ссылка на картинку"
           required>
+        <span class="popup__input-error card-image-error"></span>
         <button type="submit" class="popup__safe-btn">Сохранить</button>
       </form>
     </div>

@@ -38,10 +38,12 @@ const popupDescriptionCard = openCardPopup.querySelector('.popup__descritption-c
 
 const openPopup = (popup) => {
   popup.classList.add('popup_opened');
+  document.addEventListener('keydown', handleEscClosePopup);
 }
 
 const closePopup = (popup) => {
   popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', handleEscClosePopup);
 };
 
 buttonClosePopup.forEach(exitBtn => {
@@ -51,6 +53,21 @@ buttonClosePopup.forEach(exitBtn => {
     closePopup(parentSection);
   });
 });
+
+popups.forEach((i) => {
+  i.addEventListener('click', (evt) => {
+    if (evt.target === evt.currentTarget) {
+      closePopup(i);
+    };
+  });
+});
+
+const handleEscClosePopup = (evt) => {
+  if (evt.key === 'Escape') {
+    const onenedPopupClass = document.querySelector('.popup_opened');
+    closePopup(onenedPopupClass);
+  };
+};
 
 const createCard = (element) => {
   const cardsElement = cardTemplate.cloneNode(true);
