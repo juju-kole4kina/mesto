@@ -93,7 +93,7 @@ const openProfileEditPopup = () => {
   userJobInput.value = userJob.textContent;
 };
 
-const editProfile = (evt) => {
+const changeEditProfileText = (evt) => {
   evt.preventDefault();
   userName.textContent = userNameInput.value;
   userJob.textContent = userJobInput.value;
@@ -142,7 +142,7 @@ popupList.forEach((popup) => {
 buttonOpenProfileEditPopup.addEventListener('click', openProfileEditPopup);
 buttonOpenCardAddPopup.addEventListener('click', () => openPopup(cardAddPopup));
 
-profileEditPopup.addEventListener('submit', editProfile);
+profileEditPopup.addEventListener('submit', changeEditProfileText);
 cardAddPopup.addEventListener('submit', handleCardFormSubmit);
 
 
