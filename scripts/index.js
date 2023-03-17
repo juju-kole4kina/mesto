@@ -11,6 +11,7 @@ const cardOpenPopup = document.querySelector('.popup_type_opened-card');
 // Кнопки
 const buttonOpenProfileEditPopup = document.querySelector('.profile__edit-btn');
 const buttonOpenCardAddPopup = document.querySelector('.profile__add-btn');
+const buttonAddCardPopup = cardAddPopup.querySelector('.popup__safe-btn');
 const buttonClosePopupList = document.querySelectorAll('.popup__exit-btn');
 
 // Профиль
@@ -44,8 +45,8 @@ const closePopup = (popup) => {
 
 const handleEscClosePopup = (evt) => {
   if (evt.key === 'Escape') {
-    const openedPopup = document.querySelector('.popup_opened');
-    closePopup(openedPopup);
+    const popupOpened = document.querySelector('.popup_opened');
+    closePopup(popupOpened);
   };
 };
 
@@ -56,15 +57,15 @@ const createCard = (cardData) => {
   galleryImage.alt = cardData.name;
   cardsElement.querySelector('.gallery__item-title').textContent = cardData.name;
 
-  const likeBtn = cardsElement.querySelector('.gallery__like-btn');
+  const btnLike = cardsElement.querySelector('.gallery__like-btn');
 
-  likeBtn.addEventListener('click', (evt) => {
+  btnLike.addEventListener('click', (evt) => {
     evt.target.classList.toggle('gallery__like-btn_active');
   });
 
-  const deleteBtn = cardsElement.querySelector('.gallery__delete-btn');
+  const btnDelete = cardsElement.querySelector('.gallery__delete-btn');
 
-  deleteBtn.addEventListener('click', (evt) => {
+  btnDelete.addEventListener('click', (evt) => {
     const targetElement = evt.target;
     const targetItem = targetElement.closest('.gallery__item');
 
@@ -107,7 +108,6 @@ const handleCardFormSubmit = (evt) => {
 
   evt.target.reset();
 
-  const buttonAddCardPopup = cardAddPopup.querySelector('.popup__safe-btn');
   buttonAddCardPopup.classList.add('popup__safe-btn_disabled');
   buttonAddCardPopup.disabled = true;
 
