@@ -109,15 +109,12 @@ const handleImageClick = (cardImage) => {
   popupDescriptionCard.textContent = cardImage.name;
 }
 
-initialCards.forEach((item) => {
-  gallery.append(createCard(item));
-});
-
 const profileFormValidator = new FormValidator(FormValidatorConfig, '.popup_type_edit-profile');
 const newCardFormValidator = new FormValidator(FormValidatorConfig, '.popup_type_add-card');
 
-profileFormValidator.enableValidation();
-newCardFormValidator.enableValidation();
+initialCards.forEach((item) => {
+  gallery.append(createCard(item));
+});
 
 buttonClosePopupList.forEach(exitBtn => {
   exitBtn.addEventListener('click', (evt) => {
@@ -134,6 +131,9 @@ popupList.forEach((popup) => {
     };
   });
 });
+
+profileFormValidator.enableValidation();
+newCardFormValidator.enableValidation();
 
 buttonOpenProfileEditPopup.addEventListener('click', openProfileEditPopup);
 buttonOpenCardAddPopup.addEventListener('click', () => openPopup(cardAddPopup));
