@@ -26,12 +26,7 @@ class Card {
   _handleButtonDeleteClick() {
     this._element.remove();
   }
-// Zoom
-  // _handleImageClick() {
-  //   popupImgCard.src = this._link;
-  //   popupImgCard.alt = this._name;
-  //   popupDescriptionCard.textContent = this._name;
-  // }
+
 // Слушатели
   _setEventListener() {
     this._element.querySelector('.gallery__like-btn').addEventListener('click', () => {
