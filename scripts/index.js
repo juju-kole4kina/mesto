@@ -7,6 +7,15 @@ import { FormValidator } from './FormValidator.js';
 
 // ================= Переменные ===============================
 
+const FormValidatorConfig = {
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input-item',
+  submitButtonSelector: '.popup__safe-btn',
+  inactiveButtonClass: 'popup__safe-btn_disabled',
+  inputErrorClass: 'popup__input-error_active',
+  errorClass: 'popup__input-item_type_error'
+}
+
 // Попапы
 const popupList = document.querySelectorAll('.popup');
 const profileEditPopup = document.querySelector('.popup_type_edit-profile');
@@ -48,48 +57,17 @@ const closePopup = (popup) => {
   document.removeEventListener('keydown', handleEscClosePopup);
 };
 
+const createCard = (cardData) => {
+  const card = new Card(cardData, '.template-card', handleImageClick);
+  return card.generateCard();
+}
+
 const handleEscClosePopup = (evt) => {
   if (evt.key === 'Escape') {
     const popupOpened = document.querySelector('.popup_opened');
     closePopup(popupOpened);
   };
 };
-
-// const createCard = (cardData) => {
-//   const cardsElement = cardTemplate.cloneNode(true);
-//   const galleryImage = cardsElement.querySelector('.gallery__image');
-//   galleryImage.src = cardData.link;
-//   galleryImage.alt = cardData.name;
-//   cardsElement.querySelector('.gallery__item-title').textContent = cardData.name;
-
-//   const btnLike = cardsElement.querySelector('.gallery__like-btn');
-
-//   btnLike.addEventListener('click', (evt) => {
-//     evt.target.classList.toggle('gallery__like-btn_active');
-//   });
-
-//   const btnDelete = cardsElement.querySelector('.gallery__delete-btn');
-
-//   btnDelete.addEventListener('click', (evt) => {
-//     const targetElement = evt.target;
-//     const targetItem = targetElement.closest('.gallery__item');
-
-//     targetItem.remove();
-//   });
-
-//   galleryImage.addEventListener('click', () => {
-//     const cardImgSrc = cardData.link;
-//     const cardImgTitle = cardData.name;
-
-//     popupImgCard.src = cardImgSrc;
-//     popupImgCard.alt = cardImgTitle;
-//     popupDescriptionCard.textContent = cardImgTitle;
-
-//     openPopup(cardOpenPopup);
-//   });
-
-//   return cardsElement;
-// };
 
 const openProfileEditPopup = () => {
   openPopup(profileEditPopup);
@@ -119,6 +97,10 @@ const handleCardFormSubmit = (evt) => {
   closePopup(cardAddPopup);
 }
 
+const addCard = (card) => {
+  gallery.prepend(createCard(card));
+};
+
 const handleImageClick = (cardImage) => {
   openPopup(cardOpenPopup);
 
@@ -127,21 +109,15 @@ const handleImageClick = (cardImage) => {
   popupDescriptionCard.textContent = cardImage.name;
 }
 
-// const addCard = (card) => {
-//   gallery.prepend(createCard(card));
-// };
-
-
-// initialCards.forEach((card) => {
-//   gallery.append(createCard(card));
-// });
-
 initialCards.forEach((item) => {
-const card = new Card(item, '.template-card', handleImageClick);
-const cardElement = card.generateCard();
-
-  gallery.append(cardElement);
+  gallery.append(createCard(item));
 });
+
+const profileFormValidator = new FormValidator(FormValidatorConfig, '.popup_type_edit-profile');
+const newCardFormValidator = new FormValidator(FormValidatorConfig, '.popup_type_add-card');
+
+profileFormValidator.enableValidation();
+newCardFormValidator.enableValidation();
 
 buttonClosePopupList.forEach(exitBtn => {
   exitBtn.addEventListener('click', (evt) => {
@@ -164,6 +140,3 @@ buttonOpenCardAddPopup.addEventListener('click', () => openPopup(cardAddPopup));
 
 profileEditPopup.addEventListener('submit', changeEditProfileText);
 cardAddPopup.addEventListener('submit', handleCardFormSubmit);
-
-
-
