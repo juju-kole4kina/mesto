@@ -1,10 +1,11 @@
 // step one: create class
 class Card {
   // step two: create constructor with any data
-  constructor(cardData, template) {
+  constructor(cardData, template, handleImageClick) {
     this._link = cardData.link;
     this._name = cardData.name;
     this._template = template;
+    this._handleImageClick = handleImageClick;
   }
   // step three: получаем разметку из шаблона
   _getTemplate() {
@@ -26,11 +27,11 @@ class Card {
     this._element.remove();
   }
 // Zoom
-  _handleImageClick() {
-    popupImgCard.src = this._link;
-    popupImgCard.alt = this._name;
-    popupDescriptionCard.textContent = this._name;
-  }
+  // _handleImageClick() {
+  //   popupImgCard.src = this._link;
+  //   popupImgCard.alt = this._name;
+  //   popupDescriptionCard.textContent = this._name;
+  // }
 // Слушатели
   _setEventListener() {
     this._element.querySelector('.gallery__like-btn').addEventListener('click', () => {
@@ -40,7 +41,7 @@ class Card {
       this._handleButtonDeleteClick();
     });
     this._element.querySelector('.gallery__image').addEventListener('click', () => {
-      this._handleImageClick();
+      this._handleImageClick({link: this._link, name: this._name});
     });
   }
 // Добавление данных в разметку

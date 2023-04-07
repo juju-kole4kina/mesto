@@ -119,6 +119,14 @@ const handleCardFormSubmit = (evt) => {
   closePopup(cardAddPopup);
 }
 
+const handleImageClick = (cardImage) => {
+  openPopup(cardOpenPopup);
+
+  popupImgCard.src = cardImage.link;
+  popupImgCard.alt = cardImage.name;
+  popupDescriptionCard.textContent = cardImage.name;
+}
+
 // const addCard = (card) => {
 //   gallery.prepend(createCard(card));
 // };
@@ -129,7 +137,7 @@ const handleCardFormSubmit = (evt) => {
 // });
 
 initialCards.forEach((item) => {
-const card = new Card(item, '.template-card');
+const card = new Card(item, '.template-card', handleImageClick);
 const cardElement = card.generateCard();
 
   gallery.append(cardElement);
