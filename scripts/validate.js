@@ -1,3 +1,9 @@
+export class FormValidator {
+  constructor() {
+
+  }
+}
+
 const showInputError = (formElement, inputElement, errorMessage, errorClass, inputErrorClass) => {
   const inputError = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.add(errorClass);

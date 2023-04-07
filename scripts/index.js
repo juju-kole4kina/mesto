@@ -1,5 +1,10 @@
 'use strict';
 
+import { initialCards } from './initialCards.js';
+import { Card } from './Cards.js';
+import { FormValidator } from './FormValidator.js';
+
+
 // ================= Переменные ===============================
 
 // Попапы
@@ -50,41 +55,41 @@ const handleEscClosePopup = (evt) => {
   };
 };
 
-const createCard = (cardData) => {
-  const cardsElement = cardTemplate.cloneNode(true);
-  const galleryImage = cardsElement.querySelector('.gallery__image');
-  galleryImage.src = cardData.link;
-  galleryImage.alt = cardData.name;
-  cardsElement.querySelector('.gallery__item-title').textContent = cardData.name;
+// const createCard = (cardData) => {
+//   const cardsElement = cardTemplate.cloneNode(true);
+//   const galleryImage = cardsElement.querySelector('.gallery__image');
+//   galleryImage.src = cardData.link;
+//   galleryImage.alt = cardData.name;
+//   cardsElement.querySelector('.gallery__item-title').textContent = cardData.name;
 
-  const btnLike = cardsElement.querySelector('.gallery__like-btn');
+//   const btnLike = cardsElement.querySelector('.gallery__like-btn');
 
-  btnLike.addEventListener('click', (evt) => {
-    evt.target.classList.toggle('gallery__like-btn_active');
-  });
+//   btnLike.addEventListener('click', (evt) => {
+//     evt.target.classList.toggle('gallery__like-btn_active');
+//   });
 
-  const btnDelete = cardsElement.querySelector('.gallery__delete-btn');
+//   const btnDelete = cardsElement.querySelector('.gallery__delete-btn');
 
-  btnDelete.addEventListener('click', (evt) => {
-    const targetElement = evt.target;
-    const targetItem = targetElement.closest('.gallery__item');
+//   btnDelete.addEventListener('click', (evt) => {
+//     const targetElement = evt.target;
+//     const targetItem = targetElement.closest('.gallery__item');
 
-    targetItem.remove();
-  });
+//     targetItem.remove();
+//   });
 
-  galleryImage.addEventListener('click', () => {
-    const cardImgSrc = cardData.link;
-    const cardImgTitle = cardData.name;
+//   galleryImage.addEventListener('click', () => {
+//     const cardImgSrc = cardData.link;
+//     const cardImgTitle = cardData.name;
 
-    popupImgCard.src = cardImgSrc;
-    popupImgCard.alt = cardImgTitle;
-    popupDescriptionCard.textContent = cardImgTitle;
+//     popupImgCard.src = cardImgSrc;
+//     popupImgCard.alt = cardImgTitle;
+//     popupDescriptionCard.textContent = cardImgTitle;
 
-    openPopup(cardOpenPopup);
-  });
+//     openPopup(cardOpenPopup);
+//   });
 
-  return cardsElement;
-};
+//   return cardsElement;
+// };
 
 const openProfileEditPopup = () => {
   openPopup(profileEditPopup);
@@ -114,13 +119,20 @@ const handleCardFormSubmit = (evt) => {
   closePopup(cardAddPopup);
 }
 
-const addCard = (card) => {
-  gallery.prepend(createCard(card));
-};
+// const addCard = (card) => {
+//   gallery.prepend(createCard(card));
+// };
 
 
-initialCards.forEach((card) => {
-  gallery.append(createCard(card));
+// initialCards.forEach((card) => {
+//   gallery.append(createCard(card));
+// });
+
+initialCards.forEach((item) => {
+const card = new Card(item, '.template-card');
+const cardElement = card.generateCard();
+
+  gallery.append(cardElement);
 });
 
 buttonClosePopupList.forEach(exitBtn => {
