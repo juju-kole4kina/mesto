@@ -19,7 +19,7 @@ class Card {
   }
 // Постановка лайка
   _handleButtonLikeClick() {
-    this._element.querySelector('.gallery__like-btn').classList.toggle('gallery__like-btn_active');
+    this._buttonLike.classList.toggle('gallery__like-btn_active');
   }
 
 // Удаление карточки
@@ -29,13 +29,16 @@ class Card {
 
 // Слушатели
   _setEventListener() {
-    this._element.querySelector('.gallery__like-btn').addEventListener('click', () => {
+    this._cardImage = this._element.querySelector('.gallery__image');
+    this._buttonLike = this._element.querySelector('.gallery__like-btn');
+
+    this._buttonLike.addEventListener('click', () => {
       this._handleButtonLikeClick();
     });
     this._element.querySelector('.gallery__delete-btn').addEventListener('click', () => {
       this._handleButtonDeleteClick();
     });
-    this._element.querySelector('.gallery__image').addEventListener('click', () => {
+    this._cardImage.addEventListener('click', () => {
       this._handleImageClick({link: this._link, name: this._name});
     });
   }
@@ -44,8 +47,8 @@ class Card {
     this._element = this._getTemplate();
     this._setEventListener();
 
-    this._element.querySelector('.gallery__image').src = this._link;
-    this._element.querySelector('.gallery__image').alt = this._name;
+    this._cardImage.src = this._link;
+    this._cardImage.alt = this._name;
     this._element.querySelector('.gallery__item-title').textContent = this._name;
 
     return this._element;
