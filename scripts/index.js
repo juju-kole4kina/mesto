@@ -116,9 +116,6 @@ const handleCardFormSubmit = (evt) => {
 
   evt.target.reset();
 
-  formValidators['add-card'].disableButton();
-  formValidators['edit-profile'].disableButton();
-
   closePopup(cardAddPopup);
 }
 
