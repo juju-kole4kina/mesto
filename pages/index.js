@@ -2,6 +2,7 @@
 
 import { initialCards } from '../utils/initialCards.js';
 import { Card } from '../components/Card.js';
+import Section from '../components/Section.js';
 import { FormValidator } from '../components/FormValidator.js';
 
 
@@ -43,7 +44,7 @@ const gallery = document.querySelector('.gallery__list');
 // Наполнение попап галереи
 const popupImgCard = cardOpenPopup.querySelector('.popup__img-card');
 const popupDescriptionCard = cardOpenPopup.querySelector('.popup__descritption-card');
-// =============================================================
+
 
 // Экземпляры валидаторов
 const formValidators = {};
