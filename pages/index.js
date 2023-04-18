@@ -5,6 +5,7 @@ import { Card } from '../components/Card.js';
 import Section from '../components/Section.js';
 import Popup from '../components/Popup.js';
 import PopupWithForm from '../components/PopupWithForm.js';
+import PopupWithImage from '../components/PopupWith.Image.js';
 import { FormValidator } from '../components/FormValidator.js';
 
 
