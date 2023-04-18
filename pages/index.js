@@ -4,6 +4,7 @@ import { initialCards } from '../utils/initialCards.js';
 import { Card } from '../components/Card.js';
 import Section from '../components/Section.js';
 import Popup from '../components/Popup.js';
+import PopupWithForm from '../components/PopupWithForm.js';
 import { FormValidator } from '../components/FormValidator.js';
 
 
@@ -64,27 +65,27 @@ const enableValidation = (config) => {
 enableValidation(FormValidatorConfig);
 //===================================================================
 
-const openPopup = (popup) => {
-  popup.classList.add('popup_opened');
-  document.addEventListener('keydown', handleEscClosePopup);
-}
+// const openPopup = (popup) => {
+//   popup.classList.add('popup_opened');
+//   document.addEventListener('keydown', handleEscClosePopup);
+// }
 
-const closePopup = (popup) => {
-  popup.classList.remove('popup_opened');
-  document.removeEventListener('keydown', handleEscClosePopup);
-};
+// const closePopup = (popup) => {
+//   popup.classList.remove('popup_opened');
+//   document.removeEventListener('keydown', handleEscClosePopup);
+// };
 
 const createCard = (cardData) => {
   const card = new Card(cardData, '.template-card', handleImageClick);
   return card.generateCard();
 }
 
-const handleEscClosePopup = (evt) => {
-  if (evt.key === 'Escape') {
-    const popupOpened = document.querySelector('.popup_opened');
-    closePopup(popupOpened);
-  };
-};
+// const handleEscClosePopup = (evt) => {
+//   if (evt.key === 'Escape') {
+//     const popupOpened = document.querySelector('.popup_opened');
+//     closePopup(popupOpened);
+//   };
+// };
 
 const openProfileEditPopup = () => {
   openPopup(profileEditPopup);
@@ -138,16 +139,16 @@ initialCards.forEach((item) => {
   gallery.append(createCard(item));
 });
 
-popupList.forEach((popup) => {
-  popup.addEventListener('mousedown', (evt) => {
-    if (evt.target.classList.contains('popup_opened')) {
-      closePopup(popup);
-    }
-    if (evt.target.classList.contains('popup__exit-btn')) {
-      closePopup(popup);
-    }
-  });
-});
+// popupList.forEach((popup) => {
+//   popup.addEventListener('mousedown', (evt) => {
+//     if (evt.target.classList.contains('popup_opened')) {
+//       closePopup(popup);
+//     }
+//     if (evt.target.classList.contains('popup__exit-btn')) {
+//       closePopup(popup);
+//     }
+//   });
+// });
 
 buttonOpenProfileEditPopup.addEventListener('click', openProfileEditPopup);
 buttonOpenCardAddPopup.addEventListener('click', openAddCardPopup);
