@@ -1,5 +1,5 @@
 // step one: create class
-class Card {
+export default class Card {
   // step two: create constructor with any data
   constructor(cardData, template, handleImageClick) {
     this._link = cardData.link;
@@ -55,4 +55,4 @@ class Card {
   }
 }
 
-export { Card };
+

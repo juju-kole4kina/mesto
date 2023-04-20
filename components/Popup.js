@@ -4,18 +4,17 @@ export default class Popup {
   }
 
   open() {
-    this._popup.add('popup_opened');
+    this._popup.classList.add('popup_opened');
     document.addEventListener('keydown', this._handleEscClose);
   }
 
   close() {
-    this._popup.remove('popup_opened');
+    this._popup.classList.remove('popup_opened');
     document.removeEventListener('keydown', this._handleEscClose);
   }
 
-  _handleEscClose(evt) {
+  _handleEscClose = (evt) => {
     if(evt.key === 'Escape') {
-      // const popupOpened = document.querySelector('.popup_opened');
       this.close();
     }
   }
@@ -28,6 +27,6 @@ export default class Popup {
       if (evt.target.classList.contains('popup__exit-btn')) {
         this.close();
       }
-    })
+    });
   }
 }
