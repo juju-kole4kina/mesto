@@ -1,9 +1,21 @@
 'use strict';
 
 import { initialCards } from '../utils/initialCards.js';
+import {
+  containerSelector,
+  cardTemplate,
+  cardOpenPopupSelector,
+  profileEditPopupSelector,
+  cardAddPopupSelector,
+  userNameSelector,
+  userInfoSelector,
+  buttonOpenProfileEditPopu,
+  buttonOpenCardAddPopup,
+  buttonOpenProfileEditPopup
+} from '../utils/constants.js';
 import { Card } from '../components/Card.js';
 import Section from '../components/Section.js';
-import Popup from '../components/Popup.js';
+// import Popup from '../components/Popup.js';
 import PopupWithForm from '../components/PopupWithForm.js';
 import PopupWithImage from '../components/PopupWith.Image.js';
 import UserInfo from '../components/UserInfo.js';
@@ -23,31 +35,31 @@ const FormValidatorConfig = {
 }
 
 // Попапы
-const popupList = document.querySelectorAll('.popup');
-const profileEditPopup = document.querySelector('.popup_type_edit-profile');
-const cardAddPopup = document.querySelector('.popup_type_add-card');
-const cardOpenPopup = document.querySelector('.popup_type_opened-card');
+// const popupList = document.querySelectorAll('.popup');
+// const profileEditPopup = document.querySelector('.popup_type_edit-profile');
+// const cardAddPopup = document.querySelector('.popup_type_add-card');
+// const cardOpenPopup = document.querySelector('.popup_type_opened-card');
 
 // Кнопки
-const buttonOpenProfileEditPopup = document.querySelector('.profile__edit-btn');
-const buttonOpenCardAddPopup = document.querySelector('.profile__add-btn');
+// const buttonOpenProfileEditPopup = document.querySelector('.profile__edit-btn');
+// const buttonOpenCardAddPopup = document.querySelector('.profile__add-btn');
 
 // Профиль
-const userName = document.querySelector('.profile__user-name');
-const userJob = document.querySelector('.profile__user-description');
+// const userName = document.querySelector('.profile__user-name');
+// const userJob = document.querySelector('.profile__user-description');
 
 // Формы
-const userNameInput = document.querySelector('#user-name');
-const userJobInput = document.querySelector('#user-description');
-const cardNameInput = document.querySelector('#title-card');
-const cardImgInput = document.querySelector('#card-image');
+// const userNameInput = document.querySelector('#user-name');
+// const userJobInput = document.querySelector('#user-description');
+// const cardNameInput = document.querySelector('#title-card');
+// const cardImgInput = document.querySelector('#card-image');
 
 // Галерея
-const gallery = document.querySelector('.gallery__list');
+// const gallery = document.querySelector('.gallery__list');
 
 // Наполнение попап галереи
-const popupImgCard = cardOpenPopup.querySelector('.popup__img-card');
-const popupDescriptionCard = cardOpenPopup.querySelector('.popup__descritption-card');
+// const popupImgCard = cardOpenPopup.querySelector('.popup__img-card');
+// const popupDescriptionCard = cardOpenPopup.querySelector('.popup__descritption-card');
 
 
 // Экземпляры валидаторов
@@ -78,9 +90,40 @@ enableValidation(FormValidatorConfig);
 // };
 
 const createCard = (cardData) => {
-  const card = new Card(cardData, '.template-card', handleImageClick);
+  const card = new Card(cardData, cardTemplate, handleImageClick);
   return card.generateCard();
 }
+
+const cardsSection = new Section({
+  renderer: (card) => {
+    cardsContainer.addItem(createCard(card));
+  },
+}, containerSelector);
+
+cardsSection.renderItems(initialCards);
+
+const userInfo = new UserInfo({
+  userNameSelector: userNameSelector,
+  userInfoSelector: userInfoSelector
+});
+
+const popupFormProfile = new PopupWithForm(profileEditPopupSelector, {
+  formSubmit: (userData) => {
+    userInfo.setUsetInfo(userData);
+  }
+});
+
+const popupFormAddCard = new PopupWithForm(cardAddPopupSelector, {
+  formSubmit: ({ link, title }) => {
+    cardsSection.addItem(createCard({
+      name: title,
+      link: link,
+      alt: title
+    }));
+  }
+});
+
+
 
 // const handleEscClosePopup = (evt) => {
 //   if (evt.key === 'Escape') {
@@ -89,52 +132,54 @@ const createCard = (cardData) => {
 //   };
 // };
 
-const openProfileEditPopup = () => {
-  openPopup(profileEditPopup);
+// const openProfileEditPopup = () => {
+//   openPopup(profileEditPopup);
 
-  userNameInput.value = userName.textContent;
-  userJobInput.value = userJob.textContent;
+//   userNameInput.value = userName.textContent;
+//   userJobInput.value = userJob.textContent;
 
-  formValidators['edit-profile'].resetValidation();
-};
+//   formValidators['edit-profile'].resetValidation();
+// };
 
-const openAddCardPopup = () => {
-  openPopup(cardAddPopup);
+// const openAddCardPopup = () => {
+//   openPopup(cardAddPopup);
 
-  cardNameInput.value = '';
-  cardImgInput.value = '';
+//   cardNameInput.value = '';
+//   cardImgInput.value = '';
 
-  formValidators['add-card'].resetValidation();
-}
+//   formValidators['add-card'].resetValidation();
+// }
 
-const changeEditProfileText = (evt) => {
-  evt.preventDefault();
-  userName.textContent = userNameInput.value;
-  userJob.textContent = userJobInput.value;
+// const changeEditProfileText = (evt) => {
+//   evt.preventDefault();
+//   userName.textContent = userNameInput.value;
+//   userJob.textContent = userJobInput.value;
 
-  closePopup(profileEditPopup);
-};
+//   closePopup(profileEditPopup);
+// };
 
-const handleCardFormSubmit = (evt) => {
-  evt.preventDefault();
+// const handleCardFormSubmit = (evt) => {
+//   evt.preventDefault();
 
-  addCard({name: cardNameInput.value, link: cardImgInput.value});
+//   addCard({name: cardNameInput.value, link: cardImgInput.value});
 
-  evt.target.reset();
+//   evt.target.reset();
 
-  closePopup(cardAddPopup);
-}
+//   closePopup(cardAddPopup);
+// }
 
 const addCard = (card) => {
   gallery.prepend(createCard(card));
 };
 
-const handleImageClick = (cardImage) => {
-  openPopup(cardOpenPopup);
+const cardOpenPopup = new PopupWithImage(cardOpenPopupSelector);
 
-  popupImgCard.src = cardImage.link;
-  popupImgCard.alt = cardImage.name;
-  popupDescriptionCard.textContent = cardImage.name;
+const handleImageClick = (cardImage) => {
+  cardOpenPopup.open(cardImage);
+
+  // popupImgCard.src = cardImage.link;
+  // popupImgCard.alt = cardImage.name;
+  // popupDescriptionCard.textContent = cardImage.name;
 }
 
 initialCards.forEach((item) => {
@@ -152,8 +197,22 @@ initialCards.forEach((item) => {
 //   });
 // });
 
-buttonOpenProfileEditPopup.addEventListener('click', openProfileEditPopup);
-buttonOpenCardAddPopup.addEventListener('click', openAddCardPopup);
+buttonOpenProfileEditPopup.addEventListener('click', () => {
+  popupFormProfile.open();
+  // popupFormProfile.
 
-profileEditPopup.addEventListener('submit', changeEditProfileText);
-cardAddPopup.addEventListener('submit', handleCardFormSubmit);
+  formValidators['edit-profile'].resetValidation();
+});
+buttonOpenCardAddPopup.addEventListener('click', () => {
+  popupFormAddCard.open();
+  formValidators['add-card'].resetValidation();
+});
+
+// profileEditPopup.addEventListener('submit', changeEditProfileText);
+// cardAddPopup.addEventListener('submit', handleCardFormSubmit);
+
+popupFormProfile.setEventListener();
+popupFormAddCard.setEventListener();
+cardOpenPopup.setEventListener();
+
+

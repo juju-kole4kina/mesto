@@ -1,0 +1,9 @@
+export const containerSelector = '.gallery__list';
+export const cardTemplate = '.template-card';
+export const cardOpenPopupSelector = '.popup_type_opened-card';
+export const profileEditPopupSelector = '.popup_type_edit-profile';
+export const cardAddPopupSelector = '.popup_type_add-card';
+export const userNameSelector = '.profile__user-name';
+export const userInfoSelector = '.profile__user-description';
+export const buttonOpenProfileEditPopup = document.querySelector('.profile__edit-btn');
+export const buttonOpenCardAddPopup = document.querySelector('.profile__add-btn');
