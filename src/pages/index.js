@@ -1,5 +1,7 @@
 'use strict';
 
+import './index.css';
+
 import { initialCards } from '../utils/initialCards.js';
 import {
   cardListSelector,
