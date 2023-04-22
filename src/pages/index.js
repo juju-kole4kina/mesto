@@ -13,12 +13,12 @@ import {
   userInfoProfileSelector,
   buttonOpenCardAddPopup,
   buttonOpenProfileEditPopup,
-  FormValidatorConfig,
+  formValidatorConfig,
 } from '../utils/constants.js';
 import Card from '../components/Card.js';
 import Section from '../components/Section.js';
 import PopupWithForm from '../components/PopupWithForm.js';
-import PopupWithImage from '../components/PopupWith.Image.js';
+import PopupWithImage from '../components/PopupWithImage.js';
 import UserInfo from '../components/UserInfo.js';
 import FormValidator from '../components/FormValidator.js';
 
@@ -36,7 +36,7 @@ const enableValidation = (config) => {
   });
 };
 
-enableValidation(FormValidatorConfig);
+enableValidation(formValidatorConfig);
 //===================================================================
 
 const cardOpenPopup = new PopupWithImage(cardOpenPopupSelector);

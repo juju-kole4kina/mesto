@@ -8,7 +8,7 @@ export const userInfoProfileSelector = '.profile__user-description';
 export const buttonOpenProfileEditPopup = document.querySelector('.profile__edit-btn');
 export const buttonOpenCardAddPopup = document.querySelector('.profile__add-btn');
 
-export const FormValidatorConfig = {
+export const formValidatorConfig = {
   formSelector: '.popup__form',
   inputSelector: '.popup__input-item',
   submitButtonSelector: '.popup__safe-btn',
