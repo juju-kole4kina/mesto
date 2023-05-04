@@ -19,6 +19,17 @@ export default class Popup {
     }
   }
 
+  renderLoading(isLoading, text) {
+    this._buttonSubmit = this._popup.querySelector('.popup__safe-btn');
+    if(!this._buttonSubmit) return;
+    if (isLoading) {
+      this.defaultText = this._buttonSubmit.textContent;
+      this._buttonSubmit.textContent = text;
+    } else if (!isLoading) {
+      this._buttonSubmit.textContent = defaultText;
+    }
+  }
+
   setEventListener() {
     this._popup.addEventListener('mousedown', (evt) => {
       if (evt.target.classList.contains('popup_opened')) {

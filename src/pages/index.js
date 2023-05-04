@@ -8,13 +8,17 @@ import {
   cardTemplate,
   cardOpenPopupSelector,
   profileEditPopupSelector,
+  avatarEditPopupSelector,
+  deleteVeretificationPopupSelector,
   cardAddPopupSelector,
   userNameProfileSelector,
   userInfoProfileSelector,
+  avatarEditPopupOpener,
   buttonOpenCardAddPopup,
   buttonOpenProfileEditPopup,
   formValidatorConfig,
 } from '../utils/constants.js';
+import Api from '../components/Api';
 import Card from '../components/Card.js';
 import Section from '../components/Section.js';
 import PopupWithForm from '../components/PopupWithForm.js';
@@ -39,6 +43,15 @@ const enableValidation = (config) => {
 enableValidation(formValidatorConfig);
 //===================================================================
 
+const api = new Api({
+  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-65',
+  headers: {
+    authorization: 'e66028db-2d04-435a-b30a-e2914b0c1191',
+    'Content-Type': 'application/json'
+  }
+});
+
+
 const cardOpenPopup = new PopupWithImage(cardOpenPopupSelector);
 
 const handleImageClick = (cardImage) => {
@@ -62,6 +75,12 @@ cardList.renderItems();
 const userInfo = new UserInfo({
   userNameSelector: userNameProfileSelector,
   userInfoSelector: userInfoProfileSelector
+});
+
+const avatarEditProfile = new PopupWithForm(avatarEditPopupSelector, {
+  handleFormSubmit: (data) => {
+    avatarImageSelector.src = data.value;
+  }
 });
 
 const formProfilePopup = new PopupWithForm(profileEditPopupSelector, {
@@ -89,6 +108,12 @@ buttonOpenCardAddPopup.addEventListener('click', () => {
   formValidators['add-card'].resetValidation();
 });
 
+avatarEditPopupOpener.addEventListener('click', () => {
+  avatarEditProfile.open();
+  formValidators['edit-avatar'].resetValidation();
+});
+
 formProfilePopup.setEventListener();
 formAddCardPopup.setEventListener();
 cardOpenPopup.setEventListener();
+avatarEditProfile.setEventListener();
