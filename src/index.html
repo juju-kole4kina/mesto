@@ -15,7 +15,9 @@
   </header>
   <main class="content">
     <section class="profile" aria-label="Профайл пользователя">
-      <img src="<%=require('./images/Avatar.jpg')%>" alt="Аватар" class="profile__avatar">
+      <div class="profile__avatar">
+        <img src="<%=require('./images/Avatar.jpg')%>" alt="Аватар" class="profile__image">
+      </div>
       <div class="profile__info">
         <h1 class="profile__user-name">Жак-Ив Кусто</h1>
         <p class="profile__user-description">Исследователь океана</p>
