@@ -38,4 +38,15 @@ export default class PopupWithForm extends Popup {
     this._form.reset();
     super.close();
   }
+
+  renderLoading(isLoading, text) {
+    this._buttonSubmit = this._form.querySelector('.popup__safe-btn');
+    if (!this._buttonSubmit) return;
+    if (isLoading) {
+      this._defaultText = this._buttonSubmit.textContent;
+      this._buttonSubmit.textContent = text;
+    } else {
+      this._buttonSubmit.textContent = this._defaultText;
+    }
+  }
 }

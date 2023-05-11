@@ -40,11 +40,11 @@
       <button type="button" class="popup__exit-btn" aria-label="Закрыть окно редактирования"></button>
       <form action="post" class="popup__form popup__form_type_edit-profile" name="edit-profile" novalidate>
         <h2 class="popup__heading">Редактировать профиль</h2>
-        <input type="text" class="popup__input-item" minlength="2" maxlength="40" name="userName" id="user-name"
+        <input type="text" class="popup__input-item" minlength="2" maxlength="40" name="name" id="user-name"
           placeholder="Ваше имя" required>
         <span class="popup__input-error user-name-error"></span>
-        <input type="text" class="popup__input-item" minlength="2" maxlength="200" name="userDescription"
-          id="user-description" placeholder="Ваш род деятельности" required>
+        <input type="text" class="popup__input-item" minlength="2" maxlength="200" name="about" id="user-description"
+          placeholder="Ваш род деятельности" required>
         <span class="popup__input-error user-description-error"></span>
         <button type="submit" class="popup__safe-btn">Сохранить</button>
       </form>
@@ -55,7 +55,7 @@
       <button type="button" class="popup__exit-btn" aria-label="Закрыть окно редактирования"></button>
       <form action="post" class="popup__form popup__form_type_add-card" name="add-card" novalidate>
         <h2 class="popup__heading">Новое место</h2>
-        <input type="text" class="popup__input-item" minlength="2" maxlength="30" name="title" id="title-card"
+        <input type="text" class="popup__input-item" minlength="2" maxlength="30" name="name" id="title-card"
           placeholder="Название" required>
         <span class="popup__input-error title-card-error"></span>
         <input type="url" class="popup__input-item" name="link" id="card-image" placeholder="Ссылка на изображение"
@@ -78,7 +78,7 @@
   </section>
   <section class="popup popup_type_verification">
     <div class="popup__container">
-      <button type="button" class="exit-btn" aria-label="Закрыть окно подтверждения"></button>
+      <button type="button" class="popup__exit-btn"></button>
       <h2 class="popup__heading">Вы уверены?</h2>
       <button type="submit" class="popup__safe-btn">Да</button>
     </div>

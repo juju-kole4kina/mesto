@@ -7,10 +7,12 @@ export const avatarEditPopupSelector = '.popup_type_edit-avatar';
 export const deleteVeretificationPopupSelector = '.popup_type_verification';
 export const userNameProfileSelector = '.profile__user-name';
 export const userInfoProfileSelector = '.profile__user-description';
+export const avatarImageSelector = '.profile__image';
+export const likeCountSelector = '.card__like-count';
 export const avatarEditPopupOpener = document.querySelector('.profile__avatar');
-export const avatarImageSelector = document.querySelector('.profile__image');
 export const buttonOpenProfileEditPopup = document.querySelector('.profile__edit-btn');
 export const buttonOpenCardAddPopup = document.querySelector('.profile__add-btn');
+
 
 export const formValidatorConfig = {
   formSelector: '.popup__form',
