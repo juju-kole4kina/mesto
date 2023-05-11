@@ -1,6 +1,7 @@
 export default class Popup {
   constructor(popupSelector) {
     this._popup = document.querySelector(popupSelector);
+    this._buttonSubmit = this._popup.querySelector('.popup__safe-btn');
   }
 
   open() {
@@ -20,7 +21,6 @@ export default class Popup {
   }
 
   renderLoading(isLoading, text) {
-    this._buttonSubmit = this._popup.querySelector('.popup__safe-btn');
     if(!this._buttonSubmit) return;
     if (isLoading) {
       this.defaultText = this._buttonSubmit.textContent;

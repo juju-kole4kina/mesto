@@ -31,7 +31,6 @@ export default class Card {
     this._likeCountElement = this._element.querySelector(this._likeConutSelector);
 
     this._setEventListener();
-    // this.handleButtonLikeClick();
 
     this._cardImage.src = this._link;
     this._cardImage.alt = this._name;

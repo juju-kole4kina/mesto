@@ -56,7 +56,6 @@ const api = new Api({
 Promise.all([api.getInitialCard(), api.getUserInfo()])
   .then(([cards, user]) => {
     userId = user._id;
-    userInfo.getUserInfo(user);
     userInfo.setUserInfo(user);
     cardList.renderItems(cards, userId);
   })
@@ -124,7 +123,7 @@ const userInfo = new UserInfo({
 const formProfilePopup = new PopupWithForm(profileEditPopupSelector, {
   handleFormSubmit: (data) => {
     formProfilePopup.renderLoading(true, 'Сохранение...');
-    api.setUserInfo(data)
+    return api.setUserInfo(data)
     .then((res) => {
       userInfo.setUserInfo(res);
       formProfilePopup.close();
@@ -136,6 +135,7 @@ const formProfilePopup = new PopupWithForm(profileEditPopupSelector, {
 
   }
 });
+formProfilePopup.setEventListener();
 
 const formAvatarPopup = new PopupWithForm(avatarEditPopupSelector, {
   handleFormSubmit: (data) => {
@@ -182,7 +182,6 @@ buttonOpenProfileEditPopup.addEventListener('click', () => {
 
 avatarEditPopupOpener.addEventListener('click', () => {
   formAvatarPopup.open();
-  formAvatarPopup.setInputValue(userInfo.getUserInfo());
 
   formValidators['edit-avatar'].resetValidation();
 })
